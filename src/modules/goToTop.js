@@ -1,29 +1,27 @@
-import trackScroll from "../utils/trackScroll";
+import { scrollFromTop } from "../utils/scrollFromTop.js";
 
-console.log(trackScroll(100));
-// export default () => {
-//   const goTopBtn = document.querySelector(".go-top");
+export const goToTop = () => {
+  // Create Element
+  const goTopBtn = document.createElement("div");
+  goTopBtn.classList.add("go-top");
+  document.body.appendChild(goTopBtn);
 
-//   const trackScroll = () => {
-//     const scrolled = window.pageYOffset;
-//     const coords = document.documentElement.clientHeight;
+  // Check scroll diff with top
+  const trackScroll = () => {
+    if (scrollFromTop(1000) == true) {
+      goTopBtn.classList.add("go-top--visible");
+    } else {
+      goTopBtn.classList.remove("go-top--visible");
+    }
+  };
 
-//     if (scrolled > coords) {
-//       goTopBtn.classList.add("go-top--visible");
-//     }
-//     if (scrolled < coords) {
-//       goTopBtn.classList.remove("go-top--visible");
-//     }
-//   };
+  // Go to top
+  const backToTop = () =>
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
 
-//   const backToTop = () =>
-//     window.scrollTo({
-//       top: 0,
-//       behavior: "smooth",
-//     });
-
-//   if (goTopBtn !== undefined) {
-//     window.addEventListener("scroll", trackScroll, { passive: true });
-//     goTopBtn.addEventListener("click", backToTop);
-//   }
-// };
+  window.addEventListener("scroll", trackScroll, { passive: true });
+  goTopBtn.addEventListener("click", backToTop);
+};

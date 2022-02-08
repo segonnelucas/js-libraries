@@ -1,4 +1,4 @@
-const trackScroll = scrollTrigger => {
+export const scrollFromTop = scrollTrigger => {
   let scrolled = window.pageYOffset;
   if (scrolled > scrollTrigger) {
     return true;
@@ -6,5 +6,3 @@ const trackScroll = scrollTrigger => {
     return false;
   }
 };
-
-export { trackScroll };
