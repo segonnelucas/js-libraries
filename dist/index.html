@@ -4,7 +4,6 @@
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="https://unpkg.com/mustard-ui@latest/dist/css/mustard-ui.min.css">
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Roboto:wght@700&display=swap" rel="stylesheet">
@@ -14,10 +13,139 @@
   <body>
     <div id="app">
       <main>
-        <h1>ES6 Modules</h1>
-        <section data-module="goToTop">
-          <h2>Go To Top</h2>
-          <div class="go-top"></div>
+        <h1 class="main-title">ES6 Modules</h1>
+        <section>
+          <h2 class="division-title">Modules</h2>
+          <div class="item" data-module="goToTop">
+            <h3 class="item__title">Go To Top</h3>
+            <div class="item__desc">
+              Add a button to DOM that make the user go to top of the page when clicked.
+            </div>
+            <div class="more">
+              <h4 class="more__title">Parameters</h4>
+              <p>None</p>
+            </div>
+            <div class="more">
+              <h4 class="more__title">Imported utils</h4>
+              <ul class="more__list">
+                <li>ScrollFromTop</li>
+              </ul>
+            </div>
+            <div class="more exemple">
+              <h4 class="more__title">Exemple</h4>
+              <div class="exemple__content">
+                Scroll this page
+              </div>
+            </div>
+          </div>
+          <div class="item" data-module="Tabs">
+            <h3 class="item__title">Tabs</h3>
+            <div class="item__desc">
+              Render elements as tabs
+            </div>
+            <div class="more">
+              <h4 class="more__title">Parameters</h4>
+              <p>None</p>
+            </div>
+            <div class="more">
+              <h4 class="more__title">Imported utils</h4>
+              <ul class="more__list">
+                <li>None</li>
+              </ul>
+            </div>
+            <div class="more exemple">
+              <h4 class="more__title">Exemple</h4>
+              <div class="exemple__content">
+                <nav class="nav-tabs">
+                  <a href="#tab1" class="tab-wrap">Tab 1</a>
+                  <a href="#tab2" class="tab-wrap">Tab 2</a>
+                  <a href="#tab3" class="tab-wrap">Tab 3</a>
+                </nav>
+                <div>
+                  <div id="tab1" class="tab-pane">
+                    Contenu 1
+                  </div>
+                  <div id="tab2" class="tab-pane">
+                    Contenu 2
+                  </div>
+                  <div id="tab3" class="tab-pane">
+                    Contenu 3
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item" data-module="Panels">
+            <h3 class="item__title">Panels</h3>
+            <div class="item__desc">
+              Toggle panels visibility
+            </div>
+            <div class="more">
+              <h4 class="more__title">Parameters</h4>
+              <p>None</p>
+            </div>
+            <div class="more">
+              <h4 class="more__title">Imported utils</h4>
+              <ul class="more__list">
+                <li>None</li>
+              </ul>
+            </div>
+            <div class="more exemple">
+              <h4 class="more__title">Exemple</h4>
+              <div class="exemple__content">
+                <nav class="nav-panels">
+                  <button class="toggle-panel" data-paneltarget="menu">Show Left Panel</button>
+                  <button class="toggle-panel" data-paneltarget="filters">Show Right Panel</button>
+                </nav>
+                <div>
+                  <div id="tab1" class="tab-pane">
+                    Contenu 1
+                  </div>
+                  <div id="tab2" class="tab-pane">
+                    Contenu 2
+                  </div>
+                  <div id="tab3" class="tab-pane">
+                    Contenu 3
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <h2 class="division-title">Utils</h2>
+          <div class="item" data-module="scrollFromTop">
+            <h3 class="item__title">Scroll From Top</h3>
+            <div class="item__desc">
+              Calculate when the scroll height of the document exceeds the given height in parameters.
+            </div>
+            <div class="more">
+              <h4 class="more__title">Parameters</h4>
+              <ul class="more__list">
+                <li><span>scrollTrigger</span> : numeric // Scroll trigger height position</li>
+              </ul>
+            </div>
+            <div class="more">
+              <h4 class="more__title">Return</h4>
+              <p>Boolean</p>
+            </div>
+          </div>
+          <div class="item" data-module="isMobile">
+            <h3 class="item__title">Is Mobile</h3>
+            <div class="item__desc">
+              Return if the page is on mobile or desktop size.
+            </div>
+            <div class="more">
+              <h4 class="more__title">Parameters</h4>
+              <ul class="more__list">
+                <li>None</li>
+              </ul>
+            </div>
+            <div class="more">
+              <h4 class="more__title">Return</h4>
+              <p>Boolean</p>
+            </div>
+          </div>
         </section>
       </main>
       <aside>
@@ -25,7 +153,40 @@
           <li></li>
         </ul>
       </aside>
+      <div class="panel" data-panelside="left" data-paneltype="menu">
+        <div class="panel__wrapper">
+          <div class="panel__header">
+            <h3>Panel from left</h3>
+            <button class="close-panel">X</button>
+          </div>
+          <div class="panel__section">
+            <h4>Section title</h4>
+            <ul>
+              <li>Filter 1</li>
+              <li>Filter 1</li>
+              <li>Filter 1</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="panel" data-panelside="right" data-paneltype="filters">
+        <div class="panel__wrapper">
+          <div class="panel__header">
+            <h3>Panel from right</h3>
+            <button class="close-panel">X</button>
+          </div>
+          <div class="panel__section">
+            <h4>Section title</h4>
+            <ul>
+              <li>Filter 1</li>
+              <li>Filter 1</li>
+              <li>Filter 1</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
+    <div class="panel-bg"></div>
     <script src="bundle.js"></script>
   </body>
 </html>

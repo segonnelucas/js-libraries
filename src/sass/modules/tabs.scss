@@ -1,0 +1,24 @@
+// Tabs
+.nav-tabs{
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+	justify-content: flex-start;
+	.tab-wrap{
+		text-decoration: none;
+		background-color:lightgrey;
+		border-bottom:2px solid lightgrey;
+		display: inline-block;
+		padding:1rem;
+		&.active{
+			border-bottom: 2px solid black;
+		}
+	}
+}
+.tab-pane{
+	display: none;
+	padding:1rem 0;
+	&.active{
+		display: block;
+	}
+}

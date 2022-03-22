@@ -1,0 +1,43 @@
+// Go to Top
+$panelMaxWidth: 350px;
+
+.panel{
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	top:0;
+	max-width: $panelMaxWidth;
+	background-color:white;
+	transition:all 0.5s;
+	z-index: 151;
+	&[data-panelside="left"]{
+		left:-$panelMaxWidth;
+		&.open{
+			left:0%;
+		}
+	}
+	&[data-panelside="right"]{
+		right:-$panelMaxWidth;
+		&.open{
+			right:0%;
+		}
+	}
+}
+body{
+	&.panel-open{
+		overflow: hidden;
+		.panel-bg{
+			background: rgba(0, 0, 0, 0.5);
+			height: 100%;
+			position: fixed;
+			right: 0;
+			top: 0;
+			width: 100%;
+			z-index: 0;
+		}
+	}	
+}
+.toggle-panel,
+.close-panel{
+	cursor: pointer;
+}

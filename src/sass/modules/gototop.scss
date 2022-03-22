@@ -1,0 +1,15 @@
+// Go to Top
+.go-top{
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	position: fixed;
+	right: -100px;
+	bottom:1rem;
+	background-color: coral;
+	transition:all 0.25s;
+	cursor: pointer;
+	&--visible{
+		right:1rem;
+	}
+}

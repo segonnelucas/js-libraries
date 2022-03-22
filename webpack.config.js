@@ -2,7 +2,7 @@ const webpack = require("webpack");
 const path = require("path");
 
 const config = {
-  entry: ["./src/index.js", "./src/styles.scss"],
+  entry: ["./src/js/index.js", "./src/sass/styles.scss"],
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
