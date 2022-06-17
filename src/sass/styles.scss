@@ -56,6 +56,11 @@ body{
 		font-weight: 400;
 		color:rgb(22, 22, 22);
 	}
+	img{
+		display: inline-block;
+		vertical-align: middle;
+		max-width: 100%;
+	}
 	#app{
 		max-width: 1200px;
 		margin:2rem auto 0;
@@ -137,3 +142,4 @@ body{
 @import "./modules/tabs.scss";
 @import "./modules/gototop.scss";
 @import "./modules/panels.scss";
+@import "./modules/menu.scss";

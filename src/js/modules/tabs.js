@@ -16,6 +16,7 @@ export const tabs = () => {
       for (const myTab of myTabs) {
         myTab.classList.remove("active");
       }
+
       for (const myContentPane of myContentPanes) {
         myContentPane.classList.remove("active");
       }
@@ -23,9 +24,14 @@ export const tabs = () => {
       clickedTab.classList.add("active");
       activePane.classList.add("active");
     };
-
-    for (let i = 0; i < myTabs.length; i++) {
-      myTabs[i].addEventListener("click", myTabClicks);
+    for (const myTab of myTabs) {
+      const myTabParent = myTab.parentElement;
+      const triggerChoice = myTabParent.getAttribute("data-tabstrigger");
+      if (triggerChoice === "hover") {
+        myTab.addEventListener("mouseover", myTabClicks);
+      } else {
+        myTab.addEventListener("click", myTabClicks);
+      }
     }
   }
 };

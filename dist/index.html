@@ -7,6 +7,7 @@
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Roboto:wght@700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
       <link rel="stylesheet" href="./css/styles.css">
       <title>Document</title>
   </head>
@@ -56,7 +57,7 @@
             <div class="more exemple">
               <h4 class="more__title">Exemple</h4>
               <div class="exemple__content">
-                <nav class="nav-tabs">
+                <nav class="nav-tabs" data-tabstrigger="hover">
                   <a href="#tab1" class="tab-wrap">Tab 1</a>
                   <a href="#tab2" class="tab-wrap">Tab 2</a>
                   <a href="#tab3" class="tab-wrap">Tab 3</a>
@@ -96,18 +97,77 @@
                 <nav class="nav-panels">
                   <button class="toggle-panel" data-paneltarget="menu">Show Left Panel</button>
                   <button class="toggle-panel" data-paneltarget="filters">Show Right Panel</button>
+                  <button class="toggle-panel" data-paneltarget="modal">Show Center Panel</button>
                 </nav>
-                <div>
-                  <div id="tab1" class="tab-pane">
-                    Contenu 1
-                  </div>
-                  <div id="tab2" class="tab-pane">
-                    Contenu 2
-                  </div>
-                  <div id="tab3" class="tab-pane">
-                    Contenu 3
-                  </div>
-                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item" data-module="Sliders">
+            <h3 class="item__title">Sliders</h3>
+            <div class="item__desc">
+              Show a slider
+            </div>
+            <div class="more">
+              <h4 class="more__title">Parameters</h4>
+              <p>None</p>
+            </div>
+            <div class="more">
+              <h4 class="more__title">Imported utils</h4>
+              <ul class="more__list">
+                <li>Swiper JS</li>
+              </ul>
+            </div>
+            <div class="more exemple">
+              <h4 class="more__title">Exemple</h4>
+              <div class="exemple__content">
+                <nav class="swiper" data-slidertype="multiple">
+                  <p>Multiple</p>
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="https://picsum.photos/200/300" alt=""></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/200/301" alt=""></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/200/302" alt=""></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/201/300" alt=""></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/201/301" alt=""></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/201/302" alt=""></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/202/300" alt=""></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/202/301" alt=""></div>
+                  </div>  
+                </nav>
+                <nav class="swiper" data-slidertype="simple">
+                  <p>Simple</p>
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="https://picsum.photos/2000/600" alt=""></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/2000/601" alt=""></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/2000/602" alt=""></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/2001/600" alt=""></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/2001/601" alt=""></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/2001/602" alt=""></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/2002/600" alt=""></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/2002/601" alt=""></div>
+                  </div>  
+                </nav>
+              </div>
+            </div>
+          </div>
+          <div class="item" data-module="Menu">
+            <h3 class="item__title">Menu</h3>
+            <div class="item__desc">
+              Menu specificities
+            </div>
+            <div class="more">
+              <h4 class="more__title">Parameters</h4>
+              <p>None</p>
+            </div>
+            <div class="more">
+              <h4 class="more__title">Imported utils</h4>
+              <ul class="more__list">
+                <li>Swiper JS</li>
+              </ul>
+            </div>
+            <div class="more exemple">
+              <h4 class="more__title">Exemple</h4>
+              <div class="exemple__content">
+                <button class="menu-trigger">Show Header</button>
               </div>
             </div>
           </div>
@@ -157,6 +217,22 @@
         <div class="panel__wrapper">
           <div class="panel__header">
             <h3>Panel from left</h3>
+            <button class="close-panel">X</button>
+          </div>
+          <div class="panel__section">
+            <h4>Section title</h4>
+            <ul>
+              <li>Filter 1</li>
+              <li>Filter 1</li>
+              <li>Filter 1</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="panel" data-panelside="center" data-paneltype="modal">
+        <div class="panel__wrapper">
+          <div class="panel__header">
+            <h3>Panel centered</h3>
             <button class="close-panel">X</button>
           </div>
           <div class="panel__section">

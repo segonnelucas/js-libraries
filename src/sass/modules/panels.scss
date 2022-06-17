@@ -1,6 +1,6 @@
-// Go to Top
 $panelMaxWidth: 350px;
-
+$panelMaxWidthCentered: 600px;
+$panelMaxHeight: 600px;
 .panel{
 	position: fixed;
 	height: 100%;
@@ -8,8 +8,25 @@ $panelMaxWidth: 350px;
 	top:0;
 	max-width: $panelMaxWidth;
 	background-color:white;
-	transition:all 0.5s;
+	transition:left .5s, right .5s;
 	z-index: 151;
+	padding:1rem;
+	overflow-y: scroll;
+	&[data-panelside="center"]{
+		transition:opacity 0.5s;
+		max-height:$panelMaxHeight;
+		max-width:$panelMaxWidthCentered;
+		left:-$panelMaxWidthCentered;
+		top:50%;
+		opacity: 0;
+		height: calc(100% - 2rem);
+		width: calc(100% - 2rem);
+		&.open{
+			left:50%;
+			opacity: 1;
+			transform:translate(-50%, -50%);
+		}
+	}
 	&[data-panelside="left"]{
 		left:-$panelMaxWidth;
 		&.open{
